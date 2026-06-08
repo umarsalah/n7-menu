@@ -61,6 +61,11 @@
             z-index: 0;
         }
 
+        /* Remove watermark from cover slide */
+        .story-slide:first-child::after {
+            content: none;
+        }
+
         /* Faint N°7 watermark on every slide */
         .story-slide::after {
             content: 'N°7';
@@ -253,6 +258,23 @@
             white-space: nowrap;
         }
 
+        /* Per-slide logo badge */
+        .slide-logo {
+            position: absolute;
+            top: 14px;
+            left: 16px;
+            z-index: 10;
+        }
+
+        .slide-logo img {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid var(--copper-gold);
+            display: block;
+        }
+
         /* Cover Architecture */
         .cover-wrapper {
             flex: 1;
@@ -381,11 +403,12 @@
     <!-- Cover -->
     <div class="story-slide">
         <div class="cover-wrapper">
+            <img src="Instagram Image 1080x1080.jpg" alt="N°7 Logo" style="width:100px;height:100px;border-radius:50%;object-fit:cover;border:2px solid var(--copper-gold);margin-bottom:18px;" />
             <div class="main-brand-logo">N<span>°</span>7</div>
             <div class="script-menu-title">Menu</div>
             <div
-                style="font-family: 'Great Vibes', cursive; font-size: 28px; color: var(--muted-teal); margin-top: 80px;">
-                Thanks for visiting us</div>
+                style="font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 1000; letter-spacing: 2.5px; color: #FFFF; margin-top: 80px; text-transform: uppercase; opacity: 0.85;">
+                COFFEE &nbsp;·&nbsp; DESSERTS &nbsp;·&nbsp; FRESH FRUITS</div>
         </div>
     </div>
 
@@ -791,36 +814,36 @@
         <div class="menu-list-wrapper">
             <div class="menu-item-row">
                 <div class="item-title">شراب إضافي (فانيلا / كراميل / هيزل نت)</div>
-                <div class="price-matrix"><span class="price-l-value">15</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">شراب بستاشيو / لوتس / لافندر</div>
-                <div class="price-matrix"><span class="price-l-value">20</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">شوت اسبريسو إضافي</div>
-                <div class="price-matrix"><span class="price-l-value">15</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">تغيير الحليب (لوز / شوفان / صويا)</div>
-                <div class="price-matrix"><span class="price-l-value">20</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">كريمة مخفوقة</div>
-                <div class="price-matrix"><span class="price-l-value">10</span></div>
+                <div class="price-matrix"><span class="price-l-value">40</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-identity"><span class="item-title">نوتيلا / لوتس / بستاشيو</span><span
                         class="premium-badge">Top Pick</span></div>
-                <div class="price-matrix"><span class="price-l-value">25</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">مكسرات / جوز هند / قرفة</div>
-                <div class="price-matrix"><span class="price-l-value">15</span></div>
+                <div class="price-matrix"><span class="price-l-value">50</span></div>
             </div>
             <div class="menu-item-row">
                 <div class="item-title">عسل طبيعي</div>
-                <div class="price-matrix"><span class="price-l-value">15</span></div>
+                <div class="price-matrix"><span class="price-l-value">40</span></div>
             </div>
         </div>
         <div class="premium-footer-box" style="margin-top: 16px;">
@@ -877,11 +900,11 @@
             </div>
         </div>
         <div class="premium-footer-box">
-            <h4>إضافات مميزة • Premium Extras (+40 EGP)</h4>
+            <h4>إضافات مميزة • Premium Extras (+50 EGP)</h4>
             <p>إضافة شوكولاتة • إضافة مكسرات • إضافة عسل • إضافة بوله ايس كريم</p>
         </div>
         <div class="halal-note">
-            <strong>حلال 100%</strong> • جميع المكونات طازجة يومياً • خالٍ من المكسرات عند الطلب
+            • جميع المكونات طازجة يومياً • خالٍ من المكسرات عند الطلب
         </div>
     </div>
 
@@ -921,7 +944,7 @@
             </div>
         </div>
         <div class="halal-note">
-            <strong>حلال 100%</strong> • مخبوز طازج يومياً • يمكن التخصيص حسب الطلب
+            • مخبوز طازج يومياً • يمكن التخصيص حسب الطلب
         </div>
     </div>
 
@@ -972,7 +995,7 @@
             </div>
         </div>
         <div class="halal-note">
-            <strong>حلال 100%</strong> • مخبوز طازج يومياً • يمكن التخصيص حسب الطلب
+            • مخبوز طازج يومياً • يمكن التخصيص حسب الطلب
         </div>
     </div>
 
@@ -1015,7 +1038,7 @@
             </div>
         </div>
         <div class="halal-note" style="margin-bottom: 14px;">
-            <strong>حلال 100%</strong> • جميع الحلويات محضّرة يومياً بمكونات طازجة
+            • جميع الحلويات محضّرة يومياً بمكونات طازجة
         </div>
         <div
             style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; text-align: center; font-size: 13px; font-weight:700; font-family: 'Montserrat', sans-serif; color: var(--text-white);">
@@ -1034,11 +1057,19 @@
         @n7.egy
       </a>
     `;
-        document.querySelectorAll('.story-slide').forEach(slide => {
+        document.querySelectorAll('.story-slide').forEach((slide, index) => {
             const tag = document.createElement('div');
             tag.className = 'insta-tag';
             tag.innerHTML = instaHTML;
             slide.appendChild(tag);
+
+            // Skip cover slide — it already has the large logo
+            if (index === 0) return;
+
+            const logo = document.createElement('div');
+            logo.className = 'slide-logo';
+            logo.innerHTML = `<img src="Instagram Image 1080x1080.jpg" alt="N°7" />`;
+            slide.appendChild(logo);
         });
     </script>
 
