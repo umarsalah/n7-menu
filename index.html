@@ -418,6 +418,78 @@
         .phone-tag a:hover {
             color: var(--copper-gold);
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .story-slide {
+            scroll-margin-top: 20px;
+        }
+
+        /* Index / Table of Contents */
+        .index-list {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            z-index: 5;
+        }
+
+        .index-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            direction: rtl;
+            text-decoration: none;
+            color: inherit;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding-bottom: 9px;
+            transition: background 0.15s ease;
+        }
+
+        .index-item:hover {
+            background: rgba(223, 186, 115, 0.08);
+        }
+
+        .index-item-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .index-item-ar {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .index-item-en {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            color: var(--muted-teal);
+            margin-top: 2px;
+        }
+
+        .index-item-page {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--copper-gold);
+            min-width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Per-slide page number */
+        .page-number {
+            position: absolute;
+            bottom: 14px;
+            left: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.3);
+            z-index: 5;
+            letter-spacing: 0.5px;
+        }
     </style>
 </head>
 
@@ -435,8 +507,88 @@
         </div>
     </div>
 
+    <!-- Index -->
+    <div class="story-slide" id="index">
+        <div class="slide-header">
+            <h2>المحتويات</h2>
+            <span class="en-sub">Menu Index</span>
+            <span class="ar-tagline">دليل أقسام القائمة</span>
+        </div>
+        <div class="index-list">
+            <a class="index-item" href="#hot-beverages">
+                <span class="index-item-text">
+                    <span class="index-item-ar">المشروبات الساخنة</span>
+                    <span class="index-item-en">Hot Beverages</span>
+                </span>
+            </a>
+            <a class="index-item" href="#iced-coffee">
+                <span class="index-item-text">
+                    <span class="index-item-ar">مشروبات قهوة باردة</span>
+                    <span class="index-item-en">Iced Specialty Coffee</span>
+                </span>
+            </a>
+            <a class="index-item" href="#frappuccinos">
+                <span class="index-item-text">
+                    <span class="index-item-ar">فرابتشينو</span>
+                    <span class="index-item-en">Blended Frappuccinos</span>
+                </span>
+            </a>
+            <a class="index-item" href="#milkshakes">
+                <span class="index-item-text">
+                    <span class="index-item-ar">ميلك شيك</span>
+                    <span class="index-item-en">Thick Craft Milkshakes</span>
+                </span>
+            </a>
+            <a class="index-item" href="#sodas-mojitos">
+                <span class="index-item-text">
+                    <span class="index-item-ar">الصودا والموخيتو</span>
+                    <span class="index-item-en">Refreshing Sodas & Mojitos</span>
+                </span>
+            </a>
+            <a class="index-item" href="#juices-cocktails">
+                <span class="index-item-text">
+                    <span class="index-item-ar">الكوكتيل والعصائر الطبيعية</span>
+                    <span class="index-item-en">Fresh Juices & House Blends</span>
+                </span>
+            </a>
+            <a class="index-item" href="#extras">
+                <span class="index-item-text">
+                    <span class="index-item-ar">إضافات N°7</span>
+                    <span class="index-item-en">Customize Your Order</span>
+                </span>
+            </a>
+            <a class="index-item" href="#waffles-crepes">
+                <span class="index-item-text">
+                    <span class="index-item-ar">الوافل والكريب</span>
+                    <span class="index-item-en">The Gourmet Waffle & Crepe Lab</span>
+                </span>
+            </a>
+            <a class="index-item" href="#mini-pancakes">
+                <span class="index-item-text">
+                    <span class="index-item-ar">ميني بان كيك</span>
+                    <span class="index-item-en">Craft Mini Pancakes</span>
+                </span>
+            </a>
+            <a class="index-item" href="#cinnabons">
+                <span class="index-item-text">
+                    <span class="item-identity">
+                        <span class="index-item-ar">سينابون</span>
+                        <span class="premium-badge">Recommended</span>
+                    </span>
+                    <span class="index-item-en">Freshly Baked Cinnabons</span>
+                </span>
+            </a>
+            <a class="index-item" href="#pastries">
+                <span class="index-item-text">
+                    <span class="index-item-ar">حلويات فاخرة</span>
+                    <span class="index-item-en">Premium Pastry Selection</span>
+                </span>
+            </a>
+        </div>
+    </div>
+
     <!-- Hot Beverages -->
-    <div class="story-slide">
+    <div class="story-slide" id="hot-beverages">
         <div class="slide-header">
             <h2>المشروبات الساخنة</h2>
             <span class="en-sub">Hot Beverages</span>
@@ -528,7 +680,7 @@
     </div>
 
     <!-- Iced Coffee -->
-    <div class="story-slide">
+    <div class="story-slide" id="iced-coffee">
         <div class="slide-header">
             <h2>مشروبات قهوة باردة</h2>
             <span class="en-sub">Iced Specialty Coffee</span>
@@ -605,7 +757,7 @@
     </div>
 
     <!-- Frappuccinos -->
-    <div class="story-slide">
+    <div class="story-slide" id="frappuccinos">
         <div class="slide-header">
             <h2>فرابتشينو</h2>
             <span class="en-sub">Blended Frappuccinos</span>
@@ -652,7 +804,7 @@
     </div>
 
     <!-- Milkshakes -->
-    <div class="story-slide">
+    <div class="story-slide" id="milkshakes">
         <div class="slide-header">
             <h2>ميلك شيك</h2>
             <span class="en-sub">Thick Craft Milkshakes</span>
@@ -714,7 +866,7 @@
     </div>
 
     <!-- Sodas & Mojitos -->
-    <div class="story-slide">
+    <div class="story-slide" id="sodas-mojitos">
         <div class="slide-header">
             <h2>الصودا والموخيتو</h2>
             <span class="en-sub">Refreshing Sodas & Mojitos</span>
@@ -761,7 +913,7 @@
     </div>
 
     <!-- Juices & Cocktails -->
-    <div class="story-slide">
+    <div class="story-slide" id="juices-cocktails">
         <div class="slide-header">
             <h2>الكوكتيل والعصائر الطبيعية</h2>
             <span class="en-sub">Fresh Juices & House Blends</span>
@@ -823,7 +975,7 @@
     </div>
 
     <!-- N°7 Extras -->
-    <div class="story-slide">
+    <div class="story-slide" id="extras">
         <div class="slide-header">
             <h2>إضافات N°7</h2>
             <span class="en-sub">Customize Your Order</span>
@@ -876,7 +1028,7 @@
     </div>
 
     <!-- Waffles & Crepes -->
-    <div class="story-slide">
+    <div class="story-slide" id="waffles-crepes">
         <div class="slide-header">
             <h2>الوافل والكريب</h2>
             <span class="en-sub">The Gourmet Waffle & Crepe Lab</span>
@@ -932,7 +1084,7 @@
     </div>
 
     <!-- Mini Pancakes -->
-    <div class="story-slide">
+    <div class="story-slide" id="mini-pancakes">
         <div class="slide-header">
             <h2>ميني بان كيك</h2>
             <span class="en-sub">Craft Mini Pancakes</span>
@@ -972,7 +1124,7 @@
     </div>
 
     <!-- Cinnabons -->
-    <div class="story-slide">
+    <div class="story-slide" id="cinnabons">
         <div class="slide-header">
             <h2>سينابون</h2>
             <span class="en-sub">Freshly Baked Cinnabons</span>
@@ -1023,7 +1175,7 @@
     </div>
 
     <!-- Premium Pastries + Closing -->
-    <div class="story-slide">
+    <div class="story-slide" id="pastries">
         <div class="slide-header">
             <h2>حلويات فاخرة</h2>
             <span class="en-sub">Premium Pastry Selection</span>
@@ -1088,6 +1240,9 @@
       </a>
     `;
 
+        let pageCounter = 0;
+        const pageNumberById = {};
+
         document.querySelectorAll('.story-slide').forEach((slide, index) => {
             const tag = document.createElement('div');
             tag.className = 'insta-tag';
@@ -1106,6 +1261,28 @@
             logo.className = 'slide-logo';
             logo.innerHTML = `<img src="Instagram Image 1080x1080.jpg" alt="N°7" />`;
             slide.appendChild(logo);
+
+            // Index page itself has no page number
+            if (slide.id === 'index') return;
+
+            pageCounter++;
+            if (slide.id) pageNumberById[slide.id] = pageCounter;
+
+            const pageNumber = document.createElement('div');
+            pageNumber.className = 'page-number';
+            pageNumber.textContent = String(pageCounter).padStart(2, '0');
+            slide.appendChild(pageNumber);
+        });
+
+        document.querySelectorAll('.index-item').forEach((item) => {
+            const targetId = item.getAttribute('href').slice(1);
+            const num = pageNumberById[targetId];
+            if (!num) return;
+
+            const pageSpan = document.createElement('span');
+            pageSpan.className = 'index-item-page';
+            pageSpan.textContent = String(num).padStart(2, '0');
+            item.appendChild(pageSpan);
         });
     </script>
 
