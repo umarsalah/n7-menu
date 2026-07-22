@@ -490,6 +490,30 @@
             z-index: 5;
             letter-spacing: 0.5px;
         }
+
+        /* Print layout — one slide per printed page, no screen-only chrome */
+        @media print {
+            body {
+                background: #fff;
+                display: block;
+                padding: 0;
+            }
+
+            .story-slide {
+                width: 100%;
+                min-height: 0;
+                margin-bottom: 0;
+                box-shadow: none;
+                border-radius: 0;
+                break-after: page;
+                page-break-after: always;
+            }
+
+            .story-slide:last-child {
+                break-after: auto;
+                page-break-after: auto;
+            }
+        }
     </style>
 </head>
 
@@ -1240,10 +1264,13 @@
       </a>
     `;
 
+        const allSlides = document.querySelectorAll('.story-slide');
+        const totalPages = Array.from(allSlides).filter((slide, index) => index !== 0 && slide.id !== 'index').length;
+
         let pageCounter = 0;
         const pageNumberById = {};
 
-        document.querySelectorAll('.story-slide').forEach((slide, index) => {
+        allSlides.forEach((slide, index) => {
             const tag = document.createElement('div');
             tag.className = 'insta-tag';
             tag.innerHTML = instaHTML;
@@ -1270,7 +1297,7 @@
 
             const pageNumber = document.createElement('div');
             pageNumber.className = 'page-number';
-            pageNumber.textContent = String(pageCounter).padStart(2, '0');
+            pageNumber.textContent = `${String(pageCounter).padStart(2, '0')} / ${String(totalPages).padStart(2, '0')}`;
             slide.appendChild(pageNumber);
         });
 
